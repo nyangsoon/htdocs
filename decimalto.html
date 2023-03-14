@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li > span:first-child {
+/*      color: red;*/
+      display: inline-block;
+      width: 8em;
+/*      background: #000;*/
+
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>Decimal to ...</h1>
+  <div>
+    <input type="text" id="inputValue">
+    <button id="myButton">click</button>
+  </div>
+
+
+
+  <ul>
+    <li><span>binary</span> <span id="binary"></span></li>
+    <li><span>octal</span> <span id="octal"></span></li>
+    <li><span>hexadecimal</span> <span id="hexadecimal"></span></li>
+  </ul>
+
+
+
+  <script>
+      const inputValue = document.getElementById('inputValue');
+      const myButton = document.getElementById('myButton');
+      const binary = document.getElementById('binary');
+      const octal = document.getElementById('octal');
+      const hexadecimal = document.getElementById('hexadecimal');
+
+
+      function convertNumber() {
+        const getValue = inputValue.value;
+        binary.innerHTML = Number(getValue).toString(2)
+        octal.innerHTML = Number(getValue).toString(8)
+        hexadecimal.innerHTML = Number(getValue).toString(16)
+      }
+
+      myButton.addEventListener('click',convertNumber)
+
+
+
+  </script>
+
+</body>
+</html>
